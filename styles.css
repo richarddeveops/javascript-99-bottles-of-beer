@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+    color-scheme: light;
+    --paper: #2b1720;
+    --ink: #f3eadc;
+    --muted: #bea999;
+    --line: #553b3c;
+    --accent: #d4a359;
+    font-family: "Work Sans", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--paper);
+}
+
+.song-sheet {
+    width: min(100% - 36px, 900px);
+    margin: 0 auto;
+    padding: 48px 0 72px;
+}
+
+.song-header {
+    padding: clamp(24px, 6vw, 56px) 0 28px;
+    border-bottom: 1px solid var(--ink);
+}
+
+.eyebrow {
+    margin: 0 0 14px;
+    color: var(--accent);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+h1 {
+    max-width: 700px;
+    margin: 0;
+    font: 500 clamp(2.8rem, 8vw, 5.8rem)/.95 "Fraunces", serif;
+    letter-spacing: -.035em;
+}
+
+.note { margin: 16px 0 0; color: var(--muted); }
+
+#display > p,
+#play {
+    margin: 0 !important;
+    padding: 15px 4px !important;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink) !important;
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+#display > p:nth-child(odd) { background: rgb(255 255 255 / 48%); }
+
+#play {
+    margin-top: 0;
+    border-top: 2px solid var(--accent);
+    background: #3b252b;
+    font-weight: 600;
+}
+
+body { background: #2b1720; }
+
+.song-sheet { max-width: 1040px; }
+
+.song-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 190px;
+    column-gap: 28px;
+    border-bottom-color: var(--accent);
+}
+
+.song-header .eyebrow { grid-column: 1 / -1; color: var(--accent); }
+.song-header h1 { max-width: 620px; }
+.song-header .note { align-self: end; margin-bottom: 7px; color: var(--muted); }
+
+#display > p,
+#play {
+    border-bottom-color: var(--line);
+    color: var(--ink) !important;
+}
+
+#display > p:nth-child(odd) { background: #352129; }
+
+#play {
+    border-top-color: var(--accent);
+    background: #3b252b;
+}
+
+@media (max-width: 650px) {
+    .song-header { grid-template-columns: 1fr; }
+    .song-header .note { margin-bottom: 0; }
+}
